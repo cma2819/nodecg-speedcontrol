@@ -241,6 +241,9 @@ function importSchedule(marathonShort, useJapanese) {
                                                                 social: {
                                                                     twitch: (_a = runner.twitchName) !== null && _a !== void 0 ? _a : undefined,
                                                                 },
+                                                                custom: {
+                                                                    oengus: runner.id,
+                                                                },
                                                             };
                                                             if (!!config.oengus.disableSpeedrunComLookup) return [3 /*break*/, 2];
                                                             return [4 /*yield*/, srcom_api_1.searchForUserDataMultiple(runner.speedruncomName, runner.twitchName, runner.username)];
