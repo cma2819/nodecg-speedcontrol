@@ -33,7 +33,7 @@ export interface RunDataPlayer {
   social: {
     twitch?: string;
   };
-  custom?: object;
+  externalID?: string;
 }
 
 export type RunDataArray = RunData[];

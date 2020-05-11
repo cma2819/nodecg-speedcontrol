@@ -80,8 +80,8 @@
                     }
                   }
                 },
-                "custom": {
-                  "type": "object"
+                "externalID": {
+                  "type": "string"
                 }
               },
               "required": [
