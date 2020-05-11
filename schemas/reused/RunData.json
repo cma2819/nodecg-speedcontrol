@@ -79,6 +79,9 @@
                       "type": "string"
                     }
                   }
+                },
+                "custom": {
+                  "type": "object"
                 }
               },
               "required": [
