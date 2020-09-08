@@ -259,13 +259,15 @@ async function importSchedule(optsO: ImportOptions, dashID: string): Promise<voi
               async (rawPlayer) => {
                 const { str, url } = parseMarkdown(rawPlayer);
                 const twitchUsername = getTwitchUserFromURL(url);
+                const uniqueId = uuid();
                 const player: RunDataPlayer = {
                   name: str || '',
-                  id: uuid(),
+                  id: uniqueId,
                   teamID: team.id,
                   social: {
                     twitch: twitchUsername,
                   },
+                  externalID: uniqueId,
                 };
                 if (!config.schedule.disableSpeedrunComLookup) {
                   const sData = await searchForUserDataMultiple(twitchUsername, str);
