@@ -78,8 +78,10 @@ export default new Vuex.Store({
 
       // Adds an empty player as well for ease of use.
       const playerData = clone(defaultPlayer);
-      playerData.id = uuid();
+      const uniqueId = uuid();
+      playerData.id = uniqueId;
       playerData.teamID = teamData.id;
+      playerData.externalID = uniqueId;
       teamData.players.push(playerData);
 
       state.runData.teams.push(teamData);
@@ -88,8 +90,10 @@ export default new Vuex.Store({
       const teamIndex = state.runData.teams.findIndex((team) => teamID === team.id);
       if (teamIndex >= 0) {
         const data = clone(defaultPlayer);
-        data.id = uuid();
+        const uniqueId = uuid();
+        data.id = uniqueId;
         data.teamID = teamID;
+        data.externalID = uniqueId;
         state.runData.teams[teamIndex].players.push(data);
       }
     },
