@@ -132,6 +132,11 @@ export default Vue.extend({
         }).catch(() => {
           // run removal unsuccessful
         });
+        nodecg.sendMessage('resetChecklist').then(() => {
+          // reset checklist successful
+        }).catch(() => {
+          // reset checklist unsuccessful
+        });
       }
     },
     playNextRun(): void {
@@ -145,6 +150,11 @@ export default Vue.extend({
           }
         }).catch(() => {
           // run change unsuccessful
+        });
+        nodecg.sendMessage('resetChecklist').then(() => {
+          // reset checklist successful
+        }).catch(() => {
+          // reset checklist unsuccessful
         });
       }
     },

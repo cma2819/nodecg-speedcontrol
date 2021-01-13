@@ -166,6 +166,12 @@
         "width": 3,
         "file": "alert-dialog.html",
         "dialog": true
+      },
+      {
+        "name": "checklist",
+        "title": "Checklist",
+        "file": "checklist.html",
+        "width": 3
       }
     ]
   }

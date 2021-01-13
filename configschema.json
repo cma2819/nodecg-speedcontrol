@@ -171,12 +171,45 @@
         "useJapanese",
         "disableSpeedrunComLookup"
       ]
+    },
+    "checklist": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "items": {
+          "oneOf": [
+            {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "forceCheckBeforeStartTimer": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "enabled",
+        "forceCheckBeforeStartTimer"
+      ]
     }
   },
   "required": [
     "language",
     "twitch",
     "schedule",
-    "oengus"
+    "oengus",
+    "checklist"
   ]
 }

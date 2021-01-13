@@ -167,6 +167,12 @@ export default Vue.extend({
       }).catch(() => {
         // run change unsuccessful
       });
+
+      nodecg.sendMessage('resetChecklist').then(() => {
+        // reset checklist successful
+      }).catch(() => {
+        // reset checklist unsuccessful
+      });
     },
     duplicateRun(): void {
       const runInfoDialog = nodecg.getDialog('run-modification-dialog') as any; // eslint-disable-line @typescript-eslint/no-explicit-any, max-len

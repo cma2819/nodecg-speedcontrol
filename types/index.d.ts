@@ -6,3 +6,4 @@ export * from './RunData';
 export * from './Speedruncom';
 export * from './Timer';
 export * from './Twitch';
+export * from './CheckList';

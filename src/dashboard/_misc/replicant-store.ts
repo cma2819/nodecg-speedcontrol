@@ -2,7 +2,7 @@ import clone from 'clone';
 import { ReplicantBrowser } from 'nodecg/types/browser'; // eslint-disable-line import/no-unresolved
 import Vue from 'vue';
 import Vuex, { Store } from 'vuex';
-import { DefaultSetupTime, HoraroImportSavedOpts, HoraroImportStatus, OengusImportStatus, RunDataActiveRunSurrounding, RunFinishTimes, TimerChangesDisabled, TwitchAPIData, TwitchChannelInfo, TwitchCommercialTimer } from '../../../schemas'; // eslint-disable-line max-len, object-curly-newline
+import { DefaultSetupTime, HoraroImportSavedOpts, HoraroImportStatus, OengusImportStatus, RunDataActiveRunSurrounding, RunFinishTimes, TimerChangesDisabled, TwitchAPIData, TwitchChannelInfo, TwitchCommercialTimer, Checklist } from '../../../schemas'; // eslint-disable-line max-len, object-curly-newline
 import { RunDataActiveRun, RunDataArray, Timer } from '../../../types';
 
 Vue.use(Vuex);
@@ -21,6 +21,7 @@ const replicantNames = [
   'twitchAPIData',
   'twitchChannelInfo',
   'twitchCommercialTimer',
+  'checklist',
 ];
 const replicants: ReplicantBrowser<unknown>[] = [];
 
@@ -39,6 +40,7 @@ export const store = new Vuex.Store({
     twitchAPIData: {} as TwitchAPIData,
     twitchChannelInfo: {} as TwitchChannelInfo,
     twitchCommercialTimer: {} as TwitchCommercialTimer,
+    checklist: {} as Checklist,
   },
   mutations: {
     updateReplicant(state, { name, value }): void {
@@ -83,6 +85,17 @@ export const store = new Vuex.Store({
       Vue.set(state, 'horaroImportSavedOpts', value);
       rep.value = value;
     },
+    updateChecklistToggle(state, { name, checked }): void {
+      const rep = replicants.find(
+        (repObj) => repObj.name === 'checklist',
+      ) as ReplicantBrowser<Checklist>;
+      if (rep.value) {
+        const stateCheckbox = state.checklist.find((checkbox) => checkbox.name === name);
+        if (stateCheckbox) {
+          stateCheckbox.complete = checked;
+        }
+      }
+    },
   },
 });
 
@@ -113,6 +126,7 @@ export async function create(): Promise<Store<{
   twitchAPIData: TwitchAPIData;
   twitchChannelInfo: TwitchChannelInfo;
   twitchCommercialTimer: TwitchCommercialTimer;
+  checklist: Checklist;
 }>> {
   return NodeCG.waitForReplicants(...replicants).then(() => store);
 }

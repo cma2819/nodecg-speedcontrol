@@ -28,6 +28,10 @@ export interface SendMessageArgsMap {
   // Featured Channels
   updateFeaturedChannels: string[];
   repeaterFeaturedChannels: string[];
+
+  // Checklist
+  toggleCheckbox: {name: string; checked: boolean};
+  resetChecklist: void;
 }
 
 export interface SendMessageReturnMap {
@@ -56,6 +60,10 @@ export interface SendMessageReturnMap {
   // Featured Channels
   updateFeaturedChannels: void;
   repeaterFeaturedChannels: void;
+
+  // Checklist
+  toggleCheckbox: void;
+  resetChecklist: void;
 }
 
 export type SendMessageAck = HandledSendMessageAck | UnhandledSendMessageAck;

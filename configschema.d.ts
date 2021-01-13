@@ -37,4 +37,9 @@ export interface Configschema {
     useJapanese: boolean;
     disableSpeedrunComLookup: boolean;
   };
+  checklist: {
+    enabled: boolean;
+    items?: string[] | null;
+    forceCheckBeforeStartTimer: boolean;
+  };
 }
