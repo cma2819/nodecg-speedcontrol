@@ -29,7 +29,7 @@ export type RunDataActiveRun = {
       social: {
         twitch?: string;
       };
-      externalID?: string;
+      externalID: string;
     }[];
   }[];
   customData: {
