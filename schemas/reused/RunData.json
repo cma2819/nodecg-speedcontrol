@@ -118,6 +118,7 @@
   "required": [
     "teams",
     "customData",
-    "id"
+	"id",
+	"externalID"
   ]
 }

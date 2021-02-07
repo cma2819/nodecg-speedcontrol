@@ -36,5 +36,5 @@ export type RunDataActiveRun = {
     [k: string]: string;
   };
   id: string;
-  externalID?: string;
+  externalID: string;
 };
