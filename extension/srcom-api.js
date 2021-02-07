@@ -39,6 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.searchForUserDataMultiple = exports.searchForUserData = exports.searchForTwitchGame = void 0;
 var needle_1 = __importDefault(require("needle"));
 var nodecg_1 = require("./util/nodecg");
 var nodecg = nodecg_1.get();

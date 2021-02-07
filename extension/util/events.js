@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.listenFor = exports.sendMessage = void 0;
 var events_1 = require("events");
 var nodecg_1 = require("./nodecg");
 var emitter = new events_1.EventEmitter();

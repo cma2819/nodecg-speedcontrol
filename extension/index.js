@@ -11,6 +11,7 @@ module.exports = function (nodecg) {
     require('./twitch-api');
     require('./srcom-api');
     require('./ffz-ws');
+    require('./checklist');
     return {
         listenFor: events_1.listenFor,
         sendMessage: events_1.sendMessage,
