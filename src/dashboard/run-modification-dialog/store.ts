@@ -82,7 +82,6 @@ export default new Vuex.Store({
       playerData.id = uniqueId;
       playerData.externalID = uniqueId;
       playerData.teamID = teamData.id;
-      playerData.externalID = uniqueId;
       teamData.players.push(playerData);
 
       state.runData.teams.push(teamData);
@@ -95,7 +94,6 @@ export default new Vuex.Store({
         data.id = uniqueId;
         data.externalID = uniqueId;
         data.teamID = teamID;
-        data.externalID = uniqueId;
         state.runData.teams[teamIndex].players.push(data);
       }
     },
