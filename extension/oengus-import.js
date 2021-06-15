@@ -177,7 +177,9 @@ function importSchedule(marathonShort, useJapanese) {
                         social: {
                             twitch: (_e = runner.twitchName) !== null && _e !== void 0 ? _e : undefined,
                         },
-                        customData: {},
+                        customData: {
+                            oengusId: runner.id.toString(),
+                        },
                     };
                     if (!config.oengus.disableSpeedrunComLookup) {
                         const data = yield srcom_api_1.searchForUserDataMultiple({ type: 'name', val: runner.speedruncomName }, { type: 'twitch', val: runner.twitchName }, { type: 'name', val: runner.username });
